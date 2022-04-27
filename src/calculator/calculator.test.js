@@ -23,10 +23,21 @@ describe('Calculator', () => {
     expect(calculator.value).toBe(0);
   });
 
-  it('adds', () => {
-    calculator.set(1);
-    calculator.add(2);
-    expect(calculator.value).toBe(3);
+  // 나누는 것은 여러개의 테스트를 포함하기 때문에 그룹으로 묶어준다
+  describe('adds', () => {
+    it('adds', () => {
+      calculator.set(1);
+      calculator.add(2);
+      expect(calculator.value).toBe(3);
+    });
+
+    // 에러테스트
+    it('add should throw error if value is greater than 100', () => {
+      // 에러 테스트 하는 방법!
+      expect(() => {
+        calculator.add(101);
+      }).toThrow('Value can not be greater than 100');
+    });
   });
 
   it('subtracts', () => {
