@@ -8,7 +8,7 @@ const ProductClient = require('./product_client.js');
 
 jest.mock('./product_client.js'); // Product client 를 모크해준다.
 
-describe('ProductService', () => {
+describe('ProductService - Mock', () => {
   // 예상한 값을 리턴하는 비동기 함수를 모크한것
   const fetchItems = jest.fn(async () => {
     return [

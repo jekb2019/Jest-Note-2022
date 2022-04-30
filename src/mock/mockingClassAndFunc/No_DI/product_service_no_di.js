@@ -1,10 +1,14 @@
 /**
- * 나쁜 코드이다! 이건 이렇게 하면 안되는걸 배우기 위해 있는 코드이다.
+ * 나쁜 코드이다!
+ * Dependency injection을 사용해야한다.
  */
 
 const ProductClient = require('./product_client');
 class ProductService {
   constructor() {
+    // 이런식으로 클래스 내부에서 직접적으로 의존을 만들어서 사용하는것은
+    // Dependency injection 법칙을 위반한다.
+    // Dependency는 외부로부터 받아와야한다.
     this.productClient = new ProductClient();
   }
 
