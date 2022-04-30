@@ -1,6 +1,7 @@
 /**
  * 이 코드의 문제점. Mock을 남용한다.
  * Stub을 이용하는게 더 좋다.
+ *
  */
 const ProductService = require('./product_service_no_di.js');
 const ProductClient = require('./product_client.js');
